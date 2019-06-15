@@ -11,8 +11,8 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/danilopolani/gocialite/drivers"
-	"github.com/danilopolani/gocialite/structs"
+	"github.com/objectia/gocialite/drivers"
+	"github.com/objectia/gocialite/structs"
 	"golang.org/x/oauth2"
 	"gopkg.in/oleiade/reflections.v1"
 )
