@@ -16,11 +16,11 @@ func init() {
 
 // GitlabUserMap is the map to create the User struct
 var GitlabUserMap = map[string]string{
-	"id":         "ID",
-	"email":      "Email",
-	"login":      "Username",
-	"avatar_url": "Avatar",
-	"name":       "FullName",
+	"id":           "ID",
+	"public_email": "Email",
+	"username":     "Username",
+	"avatar_url":   "Avatar",
+	"name":         "FullName",
 }
 
 // GitlabAPIMap is the map for API endpoints
