@@ -189,6 +189,7 @@ func (g *Gocial) Handle(state, code string) error {
 
 		// Assign the value
 		// Dirty way, but we need to convert also int/float to string
+		fmt.Print(f)
 		_ = reflections.SetField(&gUser, driverUserMap[k], fmt.Sprint(f))
 	}
 
