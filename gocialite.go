@@ -187,10 +187,25 @@ func (g *Gocial) Handle(state, code string) error {
 			continue
 		}
 
-		// Assign the value
-		// Dirty way, but we need to convert also int/float to string
-		fmt.Print(f)
-		_ = reflections.SetField(&gUser, driverUserMap[k], fmt.Sprint(f))
+		var v string
+		switch f.(type) {
+		case bool:
+			if f.(bool) {
+				v = "true"
+			} else {
+				v = "false"
+			}
+		case int:
+			v = fmt.Sprintf("%d", f)
+		case float32, float64:
+			v = fmt.Sprintf("%d", int(f.(float64)))
+		default:
+			v = fmt.Sprintf("%s", f)
+		}
+		_ = reflections.SetField(&gUser, driverUserMap[k], v)
+
+		//OLD WAY: causes problems with floats
+		//_ = reflections.SetField(&gUser, driverUserMap[k], fmt.Sprint(f))
 	}
 
 	// Set the "raw" user interface
