@@ -10,4 +10,5 @@ type User struct {
 	Email     string                 `json:"email"`
 	Avatar    string                 `json:"avatar"`
 	Raw       map[string]interface{} `json:"raw"` // Raw data
+	Provider  string                 `json:"provider"`
 }

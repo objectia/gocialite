@@ -211,6 +211,9 @@ func (g *Gocial) Handle(state, code string) error {
 	// Set the "raw" user interface
 	gUser.Raw = data
 
+	// Set the "provider" to driver name
+	gUser.Provider = g.driver
+
 	// Custom callback
 	callbackMap[g.driver](client, &gUser)
 
